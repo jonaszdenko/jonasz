@@ -82,3 +82,40 @@ def wygrane(wygrana):
        hajs = 0
     
     return(hajs)
+
+def pytaniedofun():
+    
+    while True:
+        zakoncz = raw_input("Grasz dalej? t/n")
+        
+        g=0
+ 
+        if zakoncz == 'n':
+           break
+        elif zakoncz != 't' and zakoncz !='n':
+           print "Zly wybor wybierz t albo n"
+           print "Wybierz inna wartosc tu"
+           g=1 
+        
+	if g==0:
+           break 
+
+    return(zakoncz)
+
+def rodzajdef():
+
+    print "Chybil trafil [1], czy twoje liczby [2]?\n"
+   
+    while True:
+        try:
+            opcja = int(raw_input("Podaj wybor: "))
+            if opcja ==1 or opcja ==2:
+               break
+            else:
+               print "Wartosc to 1 albo 2!!!"
+
+        except:
+              print "Zla wartosc!!!"
+
+    return(opcja)     
+

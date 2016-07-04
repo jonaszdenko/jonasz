@@ -16,8 +16,12 @@ wygrana =0;
 while True:
 
     
+    o = nowymoduly.rodzajdef()
+    if o ==1:
+        twojeliczby=nowymoduly.losowaneliczbyfun()
+    else:
+        twojeliczby = nowymoduly.twojeliczbyfun()
 
-    twojeliczby = nowymoduly.twojeliczbyfun()
     liczby = nowymoduly.losowaneliczbyfun()
     
     print "Twoje liczby", twojeliczby
@@ -41,15 +45,10 @@ while True:
    
       
 
-        
-
-    zakoncz = raw_input("Grasz dalej? t/n")
-
-    if zakoncz == 'n':
-       break
-    elif zakoncz == 't':
-       continue
-        
+    z = nowymoduly.pytaniedofun()    
+    
+    if z =='n':
+         break     
          
            
  

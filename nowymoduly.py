@@ -61,8 +61,24 @@ def losowaneliczbyfun():
           
            if j==0:
               break
-
-        
-
-       
+      
     return(losowane)
+
+def saldo(obecne,wygrana):
+    hajsy = obecne - 3 + wygrana
+    return(hajsy)
+
+def wygrane(wygrana):
+    
+    if wygrana ==1:
+       hajs = 10
+    elif wygrana == 4:
+       hajs =24
+    elif wygrana == 5:
+       hajs = 50000
+    elif wygrana == 6:
+       hajs = 6000000
+    else:
+       hajs = 0
+    
+    return(hajs)

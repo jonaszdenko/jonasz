@@ -2,8 +2,11 @@
 
 import random
 
+###################################################################
+
 #funkcja w ktorej podajemy nasze liczby. Szesc liczb w petli for.
 #Kolejno obsulga wyjatkow (while: co ma robic, try:jesli jakis wyjatek na wejsciu to co robic. Kolejno jesli liczba ze zlego zakresu i kiedy liczba sie powtarza
+
 def twojeliczbyfun():
 
     twojeliczby =[]
@@ -41,7 +44,7 @@ def twojeliczbyfun():
     return(twojeliczby)
 
 
-
+##################################################################################
 
 def losowaneliczbyfun():
  
@@ -64,9 +67,15 @@ def losowaneliczbyfun():
       
     return(losowane)
 
+
+##########################################################################
+
 def saldo(obecne,wygrana):
     hajsy = obecne - 3 + wygrana
     return(hajsy)
+
+
+############################################################################
 
 def wygrane(wygrana):
     
@@ -82,6 +91,10 @@ def wygrane(wygrana):
        hajs = 0
     
     return(hajs)
+
+
+
+#############################################################################
 
 def pytaniedofun():
     
@@ -102,6 +115,9 @@ def pytaniedofun():
 
     return(zakoncz)
 
+
+##############################################################################
+
 def rodzajdef():
 
     print "Chybil trafil [1], czy twoje liczby [2]?\n"
@@ -118,4 +134,10 @@ def rodzajdef():
               print "Zla wartosc!!!"
 
     return(opcja)     
+
+##############################################################################
+
+
+
+
 

@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 
 import random
+import json
 
 ###################################################################
 
@@ -137,7 +138,25 @@ def rodzajdef():
 
 ##############################################################################
 
+def ustawienia():
+   
+    #nick = raw_input("Podaj nick")
+    nick =12
+    saldo = 30
+    gry = 0
+  
+    return(nick, saldo, gry)
 
+def czytaj_json(nazwapliku):
+    dane = []
+    if os.path.isfile(nazwapliku):
+        with open(nazwapliku, "r") as plik:
+            dane = json.load(plik)
+    return dane
 
+###################################################################
 
-
+def zapisz_json(nazwapliku, dane):
+    """Funkcja zapisuje dane w formacie json do pliku"""
+    with open(nazwapliku, "w") as plik:
+        json.dump(dane, plik)

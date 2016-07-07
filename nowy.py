@@ -10,12 +10,13 @@ liczby = []
 obecne =30;
 wygrana =0;
 
+nick,obecne,gry = nowymoduly.ustawiienia()
+nazwa = nick + ".json"
     
+while  True:
+
+    losowanie = nowymoduly.czytaj_json(nazwa)
         
-
-while True:
-
-    
     o = nowymoduly.rodzajdef()
     if o ==1:
         twojeliczby=nowymoduly.losowaneliczbyfun()

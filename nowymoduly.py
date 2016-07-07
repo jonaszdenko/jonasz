@@ -80,17 +80,26 @@ def saldo(obecne,wygrana):
 
 def wygrane(wygrana):
     
-    if wygrana ==1:
+    if wygrana ==3:
        hajs = 10
+       print "Wygrales ", hajs , " zl"
+
     elif wygrana == 4:
        hajs =24
+       print "Wygrales ", hajs ," zl"
+
     elif wygrana == 5:
        hajs = 50000
+       print "Wygrales ", hajs ," zl"
+
     elif wygrana == 6:
        hajs = 6000000
+       print "Wygrales ", hajs ," zl"
     else:
        hajs = 0
-    
+        
+
+   
     return(hajs)
 
 
@@ -100,6 +109,7 @@ def wygrane(wygrana):
 def pytaniedofun():
     
     while True:
+        
         zakoncz = raw_input("Grasz dalej? t/n")
         
         g=0
@@ -139,8 +149,8 @@ def rodzajdef():
 ##############################################################################
 
 def ustawienia():
-   
-    nick = raw_input("Podaj nick")
+    print "Witaj w grze lotto."
+    nick = raw_input("Podaj nick: ")
     saldo = 30
     gry = 1
   
@@ -159,3 +169,6 @@ def zapisz_json(nazwapliku, dane):
     """Funkcja zapisuje dane w formacie json do pliku"""
     with open(nazwapliku, "w") as plik:
         json.dump(dane, plik)
+
+
+

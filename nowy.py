@@ -3,7 +3,7 @@
 #from nowymoduly import twojeliczbyfun, losowaneliczbyfun
 
 import nowymoduly
-
+import os
  
 twojeliczby = []
 liczby = []
@@ -12,18 +12,24 @@ losowanie =[]
 
 
 nick,obecne,gry = nowymoduly.ustawienia()
-nazwa = nick + ".json"
-    
+nazwa = "folder/" + nick + ".json"
+print "Witaj w grze" ,nick
+   
 while  True:
 
     losowanie = nowymoduly.czytaj_json(nazwa)
-    
+    if losowanie:
+         print "Rozegrane gry: " ,losowanie[0]
+         print "Saldo: " ,losowanie[1]     
     if not losowanie:
         losowanie.append(gry)
         losowanie.append(obecne) 
         nowymoduly.zapisz_json(nazwa,losowanie)
              
     o = nowymoduly.rodzajdef()
+    os.system('CLS')
+   
+
     if o ==1:
         twojeliczby=nowymoduly.losowaneliczbyfun()
     else:
@@ -51,17 +57,21 @@ while  True:
            print "brak trafien!"
     
     
-    losowanie[1] = saldoo
+    
     losowanie[0]=losowanie[0]+1
     nowymoduly.zapisz_json(nazwa,losowanie)
    
-
+    print "Obecne saldo =", saldoo
     z = nowymoduly.pytaniedofun()    
+    os.system('CLS')
     
-    if z =='n':
+    
+   
+    if saldoo <=0:
+         print "Niestety nie mozesz grac dalej, bo przegrales hajs!!! Idz do roboty i wroc!"
          break     
-         
-           
+    elif z =='n':
+         break  
  
         
        

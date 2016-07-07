@@ -2,7 +2,7 @@
 
 import random
 import json
-
+import os
 ###################################################################
 
 #funkcja w ktorej podajemy nasze liczby. Szesc liczb w petli for.
@@ -140,10 +140,9 @@ def rodzajdef():
 
 def ustawienia():
    
-    #nick = raw_input("Podaj nick")
-    nick =12
+    nick = raw_input("Podaj nick")
     saldo = 30
-    gry = 0
+    gry = 1
   
     return(nick, saldo, gry)
 

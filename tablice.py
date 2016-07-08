@@ -19,11 +19,11 @@ lista.append({
 nowymoduly.zapisz_json(plik,lista)
 """
 
-lista = nowymoduly.czytaj_json("ta.json")
+lista = nowymoduly.czytaj_json("tabl.json")
 
 o = raw_input("Daj rejestracje ")
 
-for i in range(2):
-  if lista[i]["rejest"] == o:
+for i in range(397):
+  if lista[i]["rejestr"] == o:
     print lista[i]["miasto"]
     break

@@ -1,29 +1,18 @@
 #! /usr/bin/env python
+
 import nowymoduly
-
-"""plik = "ta.json"
-
-lista = []
-
-lista.append({
-    "rejest": 'RSA',
-    "woj": "Podkarpackie",
-    "miasto": "Sanok"
-     })
-
-lista.append({
-    "rejest": "KT",
-    "woj": "Malopolskie",
-    "miasto": "Tarnow"
-     })
-nowymoduly.zapisz_json(plik,lista)
-"""
 
 lista = nowymoduly.czytaj_json("tabl.json")
 
 o = raw_input("Daj rejestracje ")
+d = len(o)
 
 for i in range(397):
-  if lista[i]["rejestr"] == o:
-    print lista[i]["miasto"]
+  if lista[i]["rejestr"] == o.upper():
+
+    print "Wojewodztwo : ", lista[i]["woje"]
+    if d==2: 
+       print "Miasto : ", lista[i]["miasto"]
+    else:
+       print "Powiat : ", lista[i]["miasto"]
     break

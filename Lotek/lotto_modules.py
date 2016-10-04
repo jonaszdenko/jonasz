@@ -3,7 +3,7 @@
 import random
 import json
 import os
-
+import yaml
 
 ###################################################################
 
@@ -160,7 +160,7 @@ def Read_json(file_name):
     data = []
     if os.path.isfile(file_name):
         with open(file_name, "r") as forward:
-            data = json.load(forward)
+            data = yaml.load(forward)
     return data
 
 ###################################################################

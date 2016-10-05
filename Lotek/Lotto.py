@@ -9,7 +9,7 @@ your_numbers = []
 random_numbers = []
 main_data_from_json =[]
 data_from_json =[]
-
+user_position=0
 
 
 nick, current_ballance, game = lotto_modules.Settings()
@@ -24,15 +24,22 @@ while  True:
 
     if main_data_from_json: #jesli plik istnieje
 	for i in main_data_from_json: # petla tyle razy ile pozycji w main_data
-		if i[0] ==  nick:
-        	 print "Rozegrane gry: " ,i[1]
-         	 print "Saldo: " ,i[2] 
+		if i[0] == nick:
+        	 print "Saldo: " ,i[1]
+         	 print "Rozegrane gry: " ,i[2] 
 		 set_value = 1
-    
+		 i[0]=nick
+                 i[1]=game
+		 i[2]=current_ballance
+           	 break
+                else:
+                 user_position =+user_position  
+   
     if set_value==0: 
-	main_data_from_json.append(nick)
-        main_data_from_json.append(game)
-        main_data_from_json.append(current_ballance)
+	data_from_json.append(nick)
+        data_from_json.append(current_ballance)
+	data_from_json.append(game)
+        main_data_from_json.append(data_from_json)
         lotto_modules.Add_json(name_of_json,main_data_from_json)
              
     value_1_or_2 = lotto_modules.Choose()
@@ -54,10 +61,9 @@ while  True:
     win = lotto_modules.Win(len(strike))
       
     
-    ballance = lotto_modules.Ballance(main_data_from_json[2],win)
-    data_from_json[2]= ballance
+    ballance = lotto_modules.Ballance(current_ballance,win)
     print "Saldo:", ballance
-    print "Gry: ", data_from_json[1]     
+    print "Gry: ", game    
 
     if strike:
            print "trafione : ", strike

@@ -9,7 +9,7 @@ your_numbers = []
 random_numbers = []
 main_data_from_json =[]
 data_from_json =[]
-user_position=0
+
 
 
 nick, current_ballance, game = lotto_modules.Settings()
@@ -17,7 +17,8 @@ name_of_json = "data_to_lotto.json"
 print "Witaj w grze", nick
    
 while  True:
-
+    
+    user_position=0
     main_data_from_json = lotto_modules.Read_json(name_of_json)
     set_value = 0
     #print main_data_from_json[0][0]
@@ -28,12 +29,11 @@ while  True:
         	 print "Saldo: " ,i[1]
          	 print "Rozegrane gry: " ,i[2] 
 		 set_value = 1
-		 i[0]=nick
-                 i[1]=game
-		 i[2]=current_ballance
+                 current_ballance=i[1]
+		 game=i[2]
            	 break
                 else:
-                 user_position =+user_position  
+                 user_position+=1
    
     if set_value==0: 
 	data_from_json.append(nick)
@@ -62,8 +62,16 @@ while  True:
       
     
     ballance = lotto_modules.Ballance(current_ballance,win)
+    game+=1
     print "Saldo:", ballance
     print "Gry: ", game    
+    
+    print user_position, game
+    main_data_from_json[user_position][1]=ballance
+    main_data_from_json[user_position][2]=game
+ 
+    main_data_from_json[user_position][1]=ballance
+    main_data_from_json[user_position][2]=game
 
     if strike:
            print "trafione : ", strike
@@ -75,15 +83,17 @@ while  True:
     
     lotto_modules.Add_json(name_of_json,main_data_from_json)
    
-    print "Obecne saldo =", ballance
+    #print "Obecne saldo =", ballance
     again = lotto_modules.Question()    
     os.system('clear')
     
     
-   
-    if ballance <=0:
+    if  ballance <=0:
          print "Niestety nie mozesz grac dalej, bo przegrales hajs!!! Idz do roboty i wroc!"
-         break     
+         break 
+    elif ballance <3:
+         print"Za malo kwitu na gre"
+         break    
     elif again =='n':
          break  
  

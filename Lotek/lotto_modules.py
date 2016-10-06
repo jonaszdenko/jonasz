@@ -150,7 +150,7 @@ def Settings():
     print "Witaj w grze lotto."
     nick = raw_input("Podaj nick: ")
     balance = 30
-    game = 1
+    game = 0
   
     return(nick, balance, game)
 
